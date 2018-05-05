@@ -22,8 +22,10 @@ class FormViewController: UIViewController {
         
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(FormViewController.imageTapped(gesture:)))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(FormViewController.imageTapped(gesture:)))
+        image1.image?.accessibilityIdentifier = "cat"
         image1.addGestureRecognizer(tap1)
         image1.isUserInteractionEnabled = true
+        image2.image?.accessibilityIdentifier = "dog"
         image2.addGestureRecognizer(tap2)
         image2.isUserInteractionEnabled = true
         
@@ -37,6 +39,8 @@ class FormViewController: UIViewController {
                 self.imageSelected = image1.image?.accessibilityIdentifier
             }
             if imageView == image2 {
+                print(image2.image?.accessibilityIdentifier)
+                
                 self.imageSelected = image2.image?.accessibilityIdentifier
             }
         }
